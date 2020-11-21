@@ -5,14 +5,14 @@ create table departments (
 );
 
 create table titles (
-	title_id varchar(32),
-	title varchar(32) primary key
+	title_id varchar(32) primary key,
+	title varchar(32)
 );
 
 create table employees (
 	emp_no varchar(32) primary key,
 	emp_title varchar(32),
-	foreign key (emp_title) references titles(title),
+	foreign key (emp_title) references titles(title_id),
 	dob date,
 	firstname varchar(32),
 	lastname varchar(32),
