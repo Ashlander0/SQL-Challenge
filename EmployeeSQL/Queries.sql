@@ -24,6 +24,12 @@ from ((employees
 inner join dept_emp on employees.emp_no = dept_emp.emp_no)
 inner join departments on dept_emp.dept_no = departments.dept_no);
 
+select employees.emp_no, employees.lastname, employees.firstname, departments.dept_name
+from ((employees
+inner join dept_emp on employees.emp_no = dept_emp.emp_no)
+inner join departments on dept_emp.dept_no = departments.dept_no)
+where departments.dept_name = 'Sales' or departments.dept_name = 'Development';
+
 
 
 
