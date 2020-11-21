@@ -9,3 +9,9 @@ select departments.dept_no, departments.dept_name, managers.man_no, employees.la
 from ((departments
 inner join managers on departments.dept_no = managers.dept_no)
 inner join employees on managers.man_no = employees.emp_no)
+
+select employees.emp_no, employees.lastname, employees.firstname, departments.dept_name
+from ((employees
+inner join dept_emp on employees.emp_no = dept_emp.emp_no)
+inner join departments on dept_emp.dept_no = departments.dept_no)
+
